@@ -4,55 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".Registrar">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ciudadesproyectofinal"
+        android:background="@drawable/fotoimagenregistrofct"
         android:gravity="center"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="168dp"
-        tools:layout_editor_absoluteY="-195dp">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOGIN"
+            android:text="REGISTRO"
             android:textColor="@color/black"
-            android:textSize="50dp" />
+            android:textSize="50dp"/>
 
         <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="125dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="25dp"
+            android:layout_width="300dp"
+            android:layout_height="175dp"
             android:background="@drawable/shape"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="15dp">
 
             <EditText
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:hint="Usuario" />
+                android:hint="E-mail (usuario)" />
 
             <EditText
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña" />
 
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="Repite la contraseña"/>
+
         </LinearLayout>
 
-        <Button
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:background="@drawable/shape"
-            android:text="Aceptar"
-            android:textColor="@color/black" />
+            android:layout_marginTop="15dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONTINUAR"
+                android:textColor="@color/black"
+                android:background="@drawable/shape"/>
+
+        </LinearLayout>
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

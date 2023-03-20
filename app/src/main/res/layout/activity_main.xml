@@ -24,7 +24,30 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="Si tienes cuenta, debes de hacer click al botón 'LOGIN'. Si no tienes cuentas debes de hacer click en 'REGISTRAR'"/>
+            android:text="Si tienes cuenta, debes de hacer click al botón 'LOGIN'. Si no tienes cuentas debes de hacer click en 'REGISTRAR'."
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp">
+
+            <Button android:id="@+id/login"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="LOGIN"
+                android:background="@drawable/shape"
+                android:layout_marginRight="10dp"/>
+
+            <Button android:id="@+id/registrar"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="REGISTRAR"
+                android:background="@drawable/shape"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
 
 
     </LinearLayout>

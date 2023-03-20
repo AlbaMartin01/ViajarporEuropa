@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "988662251631",
+    "project_id": "usuarios-viajar-europa",
+    "storage_bucket": "usuarios-viajar-europa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988662251631:android:d84e8b0e2c18f5f0d80d9a",
+        "android_client_info": {
+          "package_name": "com.example.viajarporeuropa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988662251631-02ighen4as6ut0hpgu7uulasll76rtl2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3edK0qi2TciLl5SHWvptRykQ_kXk2ewg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988662251631-02ighen4as6ut0hpgu7uulasll76rtl2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
