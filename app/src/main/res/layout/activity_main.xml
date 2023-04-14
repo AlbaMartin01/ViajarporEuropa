@@ -9,46 +9,50 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/fondoviajestfg"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:background="@drawable/imagenventanatfg"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¡Bienvenid@!"
-            android:textSize="50dp"
-            android:textColor="@color/white"/>
+            android:text="Welcome!"
+            android:textColor="@color/white"
+            android:textSize="55dp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/login"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/iconologintfg"
+            android:backgroundTint="@android:color/transparent"
+            android:scaleType="fitXY"/>
 
         <TextView
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text="Si tienes cuenta, debes de hacer click al botón 'LOGIN'. Si no tienes cuentas debes de hacer click en 'REGISTRAR'."
-            android:textAlignment="center"
-            android:textColor="@color/white"/>
-
-        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp">
+            android:text="LOGIN"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
-            <Button android:id="@+id/login"
-                android:layout_width="125dp"
-                android:layout_height="wrap_content"
-                android:text="LOGIN"
-                android:background="@drawable/shape"
-                android:layout_marginRight="10dp"/>
+        <ImageButton
+            android:id="@+id/registrar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/iconoregistrotfg"/>
 
-            <Button android:id="@+id/registrar"
-                android:layout_width="125dp"
-                android:layout_height="wrap_content"
-                android:text="REGISTRAR"
-                android:background="@drawable/shape"
-                android:layout_marginLeft="10dp"/>
-
-        </LinearLayout>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTRO"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 

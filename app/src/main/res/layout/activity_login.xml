@@ -17,11 +17,12 @@
         tools:layout_editor_absoluteY="-195dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="175dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="LOGIN"
             android:textColor="@color/black"
-            android:textSize="50dp" />
+            android:textSize="50dp"/>
 
         <LinearLayout
             android:layout_width="250dp"
@@ -32,19 +33,21 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <EditText
+            <EditText android:id="@+id/usuarioLogin"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:hint="Usuario" />
+                android:hint="Usuario"
+                android:inputType="text"/>
 
-            <EditText
+            <EditText android:id="@+id/contrLogin"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:hint="Contraseña" />
+                android:hint="Contraseña"
+                android:inputType="textPassword"/>
 
         </LinearLayout>
 
-        <Button
+        <Button android:id="@+id/aceptarLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
