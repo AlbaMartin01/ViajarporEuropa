@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -12,12 +13,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<Button>(R.id.login).setOnClickListener {
+        findViewById<ImageButton>(R.id.login).setOnClickListener {
             var intento = Intent(this, Login::class.java)
             startActivity(intento)
         }
 
-        findViewById<Button>(R.id.registrar).setOnClickListener {
+        findViewById<ImageButton>(R.id.registrar).setOnClickListener {
             var intento = Intent(this, Registrar::class.java)
             startActivity(intento)
         }

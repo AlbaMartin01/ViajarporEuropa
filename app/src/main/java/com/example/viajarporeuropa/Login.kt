@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.result.IntentSenderRequest
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -35,6 +34,7 @@ class Login : AppCompatActivity() {
                 val user = firebaseAuth.currentUser
                 Toast.makeText(this, user?.uid.toString(), Toast.LENGTH_SHORT).show()
                 val intento = Intent(this, ListaPaisesEU::class.java)
+                startActivity(intento)
             } else{
                 Toast.makeText(this, "Error de Email y/o contraseña", Toast.LENGTH_SHORT).show()
             }
