@@ -12,6 +12,9 @@
         android:theme="@style/Theme.ViajarPorEuropa"
         tools:targetApi="31">
         <activity
+            android:name=".InfoPais"
+            android:exported="false" />
+        <activity
             android:name=".ListaPaisesEU"
             android:exported="false" />
         <activity
