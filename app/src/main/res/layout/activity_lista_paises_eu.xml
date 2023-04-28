@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListaPaisesEU">
+    tools:context=".ListaPaisesEU"
+    android:background="@drawable/fondo_de_pantalla_blanco_minimalista">>
 
     <LinearLayout
         android:id="@+id/linearCabecero"
@@ -33,9 +34,7 @@
         android:layout_height="581dp"
         app:layout_constraintTop_toBottomOf="@+id/linearCabecero"
         tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints"
-        android:background="@drawable/fondo_de_pantalla_blanco_minimalista">
-
+        tools:ignore="MissingConstraints">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
