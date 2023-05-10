@@ -25,8 +25,8 @@
             android:textSize="50dp"/>
 
         <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="125dp"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:background="@drawable/shape"
@@ -34,16 +34,25 @@
             android:orientation="vertical">
 
             <EditText android:id="@+id/usuarioLogin"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:hint="Usuario"
-                android:inputType="textEmailAddress"/>
+                android:inputType="textEmailAddress" />
 
             <EditText android:id="@+id/contrLogin"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
                 android:inputType="textPassword"/>
+
+            <Button android:id="@+id/textOlvidarContraseña"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:text="¿Te has olvidado la contraseña?"
+                android:textColor="#003C78"
+                android:textSize="10dp"
+                android:background="@android:color/transparent"/>
 
         </LinearLayout>
 

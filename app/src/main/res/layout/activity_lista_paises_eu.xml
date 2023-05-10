@@ -5,33 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ListaPaisesEU"
-    android:background="@drawable/fondo_de_pantalla_blanco_minimalista">>
+    android:background="@drawable/fondo_de_pantalla_blanco_minimalista">
 
     <LinearLayout
         android:id="@+id/linearCabecero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:orientation="vertical"
-        tools:ignore="MissingConstraints"
-        android:background="#B2BABB"
-        android:layout_marginBottom="50dp">
+        tools:ignore="MissingConstraints">
 
-        <TextView
-            android:layout_width="300dp"
+        <LinearLayout
+            android:layout_width="411dp"
             android:layout_height="wrap_content"
-            android:layout_margin="25dp"
-            android:text="¿Qué ciudad quieres visitar?"
-            android:textAlignment="center"
-            android:textColor="#424949"
-            android:textSize="40dp"
-            android:textStyle="bold" />
+            android:background="#B2BABB">
+
+            <ImageButton
+                android:id="@+id/atrasListaPaises"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="25dp"
+                android:background="#B2BABB"
+                android:scaleType="fitXY"
+                android:src="@drawable/flechaatrastfg"
+                android:layout_marginRight="140dp"/>
+
+            <ImageButton
+                android:id="@+id/infoUsuario"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#B2BABB"
+                android:scaleType="fitXY"
+                android:src="@drawable/iconousuariotfg"
+                android:layout_marginLeft="140dp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <ScrollView
         android:layout_width="411dp"
-        android:layout_height="581dp"
+        android:layout_height="660dp"
         app:layout_constraintTop_toBottomOf="@+id/linearCabecero"
         tools:layout_editor_absoluteX="0dp"
         tools:ignore="MissingConstraints">
@@ -39,274 +56,183 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp">
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp">
 
-            <RadioButton
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Moscú - Rusia"
-                android:textSize="20dp"/>
+                android:text="¿Qué ciudad quieres visitar?"
+                android:textColor="#424949"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="25dp"/>
 
-            <RadioButton
+            <RadioGroup
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Berlín - Alemania"
-                android:textSize="20dp"/>
+                android:layout_height="wrap_content">
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Londres - Reino Unido"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/berlin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Berlín - Alemania"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Paris - Francia"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/paris"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="París - Francia"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Roma - Italia"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/roma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Roma - Italia"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Madrid - España"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/madrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Madrid - España"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kiev - Ucrania"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/Varsovia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Varsovia - Polonia"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Varsovia - Polonia"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/bucarest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bucarest - Rumania"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bucarest - Rumania"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/amsterdam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ámsterdam - Países Bajos"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ámsterdam - Países Bajos"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/bruselas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bruselas - Bélgica"
+                    android:textSize="20dp" />
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bruselas - Bélgica"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/praga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Praga - República Checa (Chequía)"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Praga - República Checa (Chequía)"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/estocolmo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estocolmo - Suecia"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Estocolmo - Suecia"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/atenas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atenas - Grecia"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Atenas - Grecia"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/lisboa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lisboa - Portugal"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lisboa - Portugal"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/budapest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Budapest - Hungría"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Budapest - Hungría"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/viena"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Viena - Austria"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Minsk - Bielorrusia"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/copenhague"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Copenhague - Dinamarca"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Viena - Austria"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/helsinki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Helsinki - Finlandia"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Berna - Siuza"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/oslo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Oslo - Noruega"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Belgrado - Serbia"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/bratislava"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bratislava - Eslovaquia"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sofia - Bulgaria"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/dublin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dublín - Irlanda"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Copenhague - Dinamarca"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/zagreb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Zagreb - Croacia"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Helsinki - Finlandia"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/vilnius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vilnius - Lituania"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Oslo - Noruega"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/liubliana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Liubliana - Eslovenia"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bratislava - Eslovaquia"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/riga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Riga - Letonia"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dublín - Irlanda"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/tallin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tallin - Estonia"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Zagreb - Croacia"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/luxemburgo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Luxemburgo - Luxemburgo"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chisinau - Moldavia"
-                android:textSize="20dp"/>
+                <RadioButton android:id="@+id/laValeta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="La Valeta - Malta"
+                    android:textSize="20dp"/>
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sarajevo - Bosnia y Herzagovina"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tirana - Albania"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vilnius - Lituania"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Skopje - Macedonia"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Liubliana - Eslovenia"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Riga - Letonia"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tallin - Estonia"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Podgorica - Montenegro"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Luxemburgo - Luxemburgo"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="La Valleta - Malta"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Reikiavik - Islandia"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Andorra la vella - Andorra"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vaduz - Liechenstein"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mónaco - Principado de Mónaco"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="San Marino - República de San Marino"
-                android:textSize="20dp"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ciudad del Vaticano - Ciudad del Vaticano"
-                android:textSize="20dp"/>
+            </RadioGroup>
 
             <Button
+                android:id="@+id/aceptarInfoPais"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CONTINUAR"

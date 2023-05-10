@@ -41,7 +41,10 @@ class Registrar : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
             if (task.isSuccessful){
                 Toast.makeText(this, "Cuenta creada", Toast.LENGTH_SHORT).show()
+                val user = auth.currentUser
+                user?.sendEmailVerification()
                 var intento = Intent(this, ListaPaisesEU::class.java)
+                intento.putExtra("nombreUsuario", email)
                 startActivity(intento)
             } else{
                 Toast.makeText(this, "Algo salio mal", Toast.LENGTH_SHORT).show()
