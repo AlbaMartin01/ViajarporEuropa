@@ -1,13 +1,18 @@
  package com.example.viajarporeuropa
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 
  class InfoPais : AppCompatActivity() {
@@ -17,11 +22,14 @@ import com.google.firebase.firestore.FirebaseFirestore
         setContentView(R.layout.activity_info_pais)
 
         val db : FirebaseFirestore = FirebaseFirestore.getInstance()
+        val auth = FirebaseAuth.getInstance()
 
         var nombUsuario = intent.getStringExtra("nombreUsuario")
         var paginaRecivida = "infoPaises"
         var nombCiudad = intent.getStringExtra("ciudad")
         var idCiudad = intent.getStringExtra("id").toString()
+
+        db.collection("UsuariosLugaresFavoritos").add(auth.currentUser.toString())
 
         db.collection("InfoPaises").document(idCiudad).get().addOnSuccessListener {document ->
             if (document.exists()){
@@ -72,9 +80,9 @@ import com.google.firebase.firestore.FirebaseFirestore
         }
         findViewById<ImageButton>(R.id.atrasListaPaises).setOnClickListener {
             var intento = Intent(this,ListaPaisesEU::class.java)
+            intento.putExtra("nombreUsuario", nombUsuario)
             startActivity(intento)
         }
-
         findViewById<TextView>(R.id.nombreDeCiudad).setText(nombCiudad)
 
     }

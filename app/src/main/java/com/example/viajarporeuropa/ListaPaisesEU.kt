@@ -16,10 +16,7 @@ class ListaPaisesEU : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_paises_eu)
 
-        var nombUsuario = intent.getStringExtra("nombreUsuario")
         var paginaRecivida = "listaPaises"
-
-        var nombreCiudad = ""
 
         findViewById<ImageButton>(R.id.atrasListaPaises).setOnClickListener {
             var intento = Intent(this, Login::class.java)
@@ -28,14 +25,12 @@ class ListaPaisesEU : AppCompatActivity() {
 
         findViewById<ImageButton>(R.id.infoUsuario).setOnClickListener {
             var intento = Intent (this, infoUsuario::class.java)
-            intento.putExtra("nombreUsuario", nombUsuario)
             intento.putExtra("paginaRec", paginaRecivida)
             startActivity(intento)
         }
 
         findViewById<Button>(R.id.aceptarInfoPais).setOnClickListener {
             var intento = Intent(this,InfoPais::class.java)
-            intento.putExtra("nombreUsuario", nombUsuario)
             if (findViewById<RadioButton>(R.id.amsterdam).isChecked) {
                 intento.putExtra("ciudad", "Ámsterdam - Países Bajos")
                 intento.putExtra("id", "Amsterdam")
@@ -92,7 +87,7 @@ class ListaPaisesEU : AppCompatActivity() {
                 intento.putExtra("id", "Paris")
             } else if (findViewById<RadioButton>(R.id.praga).isChecked) {
                 intento.putExtra("ciudad", "Praga - República Checa (Chequia)")
-                intento.putExtra("id", "Amsterdam")
+                intento.putExtra("id", "Praga")
             } else if (findViewById<RadioButton>(R.id.riga).isChecked) {
                 intento.putExtra("ciudad", "Riga - Letonia")
                 intento.putExtra("id", "Riga")
