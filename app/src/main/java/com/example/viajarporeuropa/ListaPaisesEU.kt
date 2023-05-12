@@ -104,7 +104,7 @@ class ListaPaisesEU : AppCompatActivity() {
                 intento.putExtra("ciudad", "Viena - Austria")
                 intento.putExtra("id", "Viena")
             } else if (findViewById<RadioButton>(R.id.amsterdam).isChecked) {
-                intento.putExtra("ciudad", "Vilnius - Lituania")
+                intento.putExtra("ciudad", "Vilna - Lituania")
                 intento.putExtra("id", "Vilnius")
             } else if (findViewById<RadioButton>(R.id.zagreb).isChecked) {
                 intento.putExtra("ciudad", "Zagreb - Croacia")
