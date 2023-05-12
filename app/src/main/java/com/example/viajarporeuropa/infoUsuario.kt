@@ -23,7 +23,7 @@ class infoUsuario : AppCompatActivity() {
 
         findViewById<TextView>(R.id.nombreUsuario).setText(auth.currentUser?.email.toString())
 
-        findViewById<TextView>(R.id.uid).setText(auth.currentUser?.providerId)
+        findViewById<TextView>(R.id.uid).setText(auth.currentUser?.uid)
 
         findViewById<Button>(R.id.usuarioLogOut).setOnClickListener {
             auth.signOut()

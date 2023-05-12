@@ -21,6 +21,9 @@
             android:name=".ListaPaisesEU"
             android:exported="false" />
         <activity
+            android:name=".PaginaPrincipal"
+            android:exported="false" />
+        <activity
             android:name=".Registrar"
             android:exported="false" />
         <activity
