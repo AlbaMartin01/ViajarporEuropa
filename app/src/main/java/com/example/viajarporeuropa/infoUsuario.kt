@@ -4,16 +4,18 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class infoUsuario : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info_usuario)
+
+        val db : FirebaseFirestore = FirebaseFirestore.getInstance()
+
         var pagina = intent.getStringExtra("paginaRec")
         var nombreCiu = intent.getStringExtra("nombreCiudad")
         var IDciudad = intent.getStringExtra("idCiu")
@@ -42,5 +44,33 @@ class infoUsuario : AppCompatActivity() {
                 startActivity(intento)
             }
         }
+
+        val documentRef = db.collection("UsuariosLugaresFavoritos").document(auth.currentUser?.email.toString())
+        documentRef.get().addOnSuccessListener { documentSnapshot ->
+            if (documentSnapshot.exists()) {
+                val data = documentSnapshot.data
+                val campos = data?.keys ?: emptySet()
+                    // numCampos contiene el número de campos en el documento
+
+                    val linearLayout = findViewById<LinearLayout>(R.id.linearLayout)
+
+                    // Lógica para crear y mostrar los botones según el número de campos
+                    for (campo in campos) {
+                        val button = Button(this)
+                        var ciudad = documentSnapshot.get(campo).toString()
+                        button.text = ciudad
+                        button.setOnClickListener {
+                            var intento = Intent(this,InfoPais::class.java)
+                            intento.putExtra("ciudad",ciudad)
+                            intento.putExtra("id", campo)
+                            startActivity(intento)
+                        }
+                        // Configura el botón según tus necesidades
+                        // ...
+
+                        linearLayout.addView(button) // Agrega el botón al LinearLayout existente
+                    }
+                }
+            }
     }
 }

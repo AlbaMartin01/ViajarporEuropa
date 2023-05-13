@@ -370,9 +370,19 @@
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:text="Añadir a favoritos"
-                    android:backgroundTint="#77A93226"
+                    android:backgroundTint="#77239B56"
                     android:layout_gravity="center"
                     android:layout_marginBottom="25dp"/>
+
+                <Button
+                    android:id="@+id/eliminarFavoritos"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text="Eliminar de favoritos"
+                    android:backgroundTint="#77A93226"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="25dp"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 

@@ -26,7 +26,7 @@
 
         <LinearLayout
             android:layout_width="250dp"
-            android:layout_height="125dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:background="@drawable/shape"
@@ -44,6 +44,19 @@
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
                 android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/olvidarContraseña"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:text="¿Has olvidado la contraseña?"
+                android:textAllCaps="false"
+                android:textSize="10dp"
+                android:textColor="#1F618D"
+                tools:ignore="RtlCompat" />
 
         </LinearLayout>
 

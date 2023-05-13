@@ -7,13 +7,16 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 
  class InfoPais : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -29,10 +32,12 @@ import com.google.firebase.firestore.FirebaseFirestore
         var nombCiudad = intent.getStringExtra("ciudad")
         var idCiudad = intent.getStringExtra("id").toString()
 
-        db.collection("UsuariosLugaresFavoritos").add(auth.currentUser.toString())
+        var ciudad = ""
 
         db.collection("InfoPaises").document(idCiudad).get().addOnSuccessListener {document ->
             if (document.exists()){
+                ciudad = document.data?.get("ciudad").toString()
+                findViewById<TextView>(R.id.nombreDeCiudad).setText(ciudad)
                 var idioma = document.data?.get("Idioma").toString()
                 findViewById<TextView>(R.id.idioma).setText(idioma)
                 var moneda = document.data?.get("moneda").toString()
@@ -74,7 +79,7 @@ import com.google.firebase.firestore.FirebaseFirestore
             var intento = Intent (this, infoUsuario::class.java)
             intento.putExtra("nombreUsuario", nombUsuario)
             intento.putExtra("paginaRec", paginaRecivida)
-            intento.putExtra("nombreCiudad",nombCiudad)
+            intento.putExtra("nombreCiudad",ciudad)
             intento.putExtra("idCiu", idCiudad)
             startActivity(intento)
         }
@@ -83,7 +88,50 @@ import com.google.firebase.firestore.FirebaseFirestore
             intento.putExtra("nombreUsuario", nombUsuario)
             startActivity(intento)
         }
-        findViewById<TextView>(R.id.nombreDeCiudad).setText(nombCiudad)
 
+        val documentRef =
+            db.collection("UsuariosLugaresFavoritos").document(auth.currentUser?.email.toString())
+
+        findViewById<Button>(R.id.añadirFavoritos).setOnClickListener {
+            val data = hashMapOf(
+                idCiudad to ciudad
+            )
+
+            documentRef.get().addOnSuccessListener { documentSnapshot ->
+                if (!documentSnapshot.contains(idCiudad)) {
+                    documentRef.set(data, SetOptions.merge()).addOnSuccessListener {
+                        Toast.makeText(this,"Se ha añadido a favoritos correctamente",Toast.LENGTH_SHORT).show()
+                        findViewById<Button>(R.id.añadirFavoritos).visibility = View.GONE
+                        findViewById<Button>(R.id.eliminarFavoritos).visibility = View.VISIBLE
+                    }.addOnFailureListener { exception ->
+                        Toast.makeText(this, "No se ha añadido a favoritos correctamente", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+
+        findViewById<Button>(R.id.eliminarFavoritos).setOnClickListener {
+            val updates = HashMap<String, Any>()
+            updates[idCiudad] = FieldValue.delete()
+            documentRef.update(updates).addOnSuccessListener {
+                Toast.makeText(this,"Se ha eliminado de favoritos correctamente",Toast.LENGTH_SHORT).show()
+                findViewById<Button>(R.id.añadirFavoritos).visibility = View.VISIBLE
+                findViewById<Button>(R.id.eliminarFavoritos).visibility = View.GONE
+
+            }.addOnFailureListener {exception ->
+                Toast.makeText(this,"Se ha producido un error",Toast.LENGTH_SHORT).show()
+
+            }
+        }
+
+        documentRef.get().addOnSuccessListener { documentSnapshot ->
+            if (documentSnapshot.contains(idCiudad)) {
+                findViewById<Button>(R.id.añadirFavoritos).visibility = View.GONE
+                findViewById<Button>(R.id.eliminarFavoritos).visibility = View.VISIBLE
+            } else{
+                findViewById<Button>(R.id.añadirFavoritos).visibility = View.VISIBLE
+                findViewById<Button>(R.id.eliminarFavoritos).visibility = View.GONE
+            }
+        }
     }
 }

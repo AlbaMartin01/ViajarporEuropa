@@ -15,6 +15,7 @@ class Login : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var authStateListener: FirebaseAuth.AuthStateListener
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -26,13 +27,18 @@ class Login : AppCompatActivity() {
         btningresar.setOnClickListener{
             singIn(txtemail.text.toString(),txtpassword.text.toString())
         }
+
+        findViewById<Button>(R.id.olvidarContraseña).setOnClickListener {
+            val auth = FirebaseAuth.getInstance()
+            auth.sendPasswordResetEmail(auth.currentUser?.email.toString())
+        }
     }
 
     private fun singIn (email: String, password: String){
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this){task ->
             if(task.isSuccessful){
                 val user = firebaseAuth.currentUser
-                Toast.makeText(this, user?.uid.toString(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, user?.email.toString(), Toast.LENGTH_SHORT).show()
                 val intento = Intent(this, ListaPaisesEU::class.java)
                 startActivity(intento)
             } else{

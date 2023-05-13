@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/fondo_de_pantalla_blanco_minimalista">
+        android:background="@drawable/minimalistas_abstracto_y_arquitectura_5">
 
         <LinearLayout
             android:id="@+id/linearCabecero"
