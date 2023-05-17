@@ -42,22 +42,102 @@ import com.google.firebase.firestore.SetOptions
                 findViewById<TextView>(R.id.idioma).setText(idioma)
                 var moneda = document.data?.get("moneda").toString()
                 findViewById<TextView>(R.id.moneda).setText(moneda)
+
                 var sitio1 = document.data?.get("sitio1").toString()
-                findViewById<TextView>(R.id.sitio1).setText(sitio1)
+                findViewById<Button>(R.id.sitio1).setText(sitio1)
+                findViewById<Button>(R.id.sitio1).setOnClickListener {
+                    val texto = sitio1
+                    val caracterAntiguo = ' '
+                    val caracterNuevo = '+'
+                    val nuevoTexto = reemplazarCaracter(texto, caracterAntiguo, caracterNuevo)
+                    var uriUrl = Uri.parse("https://www.google.com/search?q=" + nuevoTexto)
+                    var intento = Intent(Intent.ACTION_VIEW, uriUrl)
+                    startActivity(intento)
+                }
+
                 var sitio2 = document.data?.get("sitio2").toString()
                 findViewById<TextView>(R.id.sitio2).setText(sitio2)
+                findViewById<Button>(R.id.sitio2).setOnClickListener {
+                    val texto = sitio2
+                    val caracterAntiguo = ' '
+                    val caracterNuevo = '+'
+                    val nuevoTexto = reemplazarCaracter(texto, caracterAntiguo, caracterNuevo)
+                    var uriUrl = Uri.parse("https://www.google.com/search?q=" + nuevoTexto)
+                    var intento = Intent(Intent.ACTION_VIEW, uriUrl)
+                    startActivity(intento)
+                }
+
                 var sitio3 = document.data?.get("sitio3").toString()
                 findViewById<TextView>(R.id.sitio3).setText(sitio3)
+                findViewById<Button>(R.id.sitio3).setOnClickListener {
+                    val texto = sitio3
+                    val caracterAntiguo = ' '
+                    val caracterNuevo = '+'
+                    val nuevoTexto = reemplazarCaracter(texto, caracterAntiguo, caracterNuevo)
+                    var uriUrl = Uri.parse("https://www.google.com/search?q=" + nuevoTexto)
+                    var intento = Intent(Intent.ACTION_VIEW, uriUrl)
+                    startActivity(intento)
+                }
+
                 var sitio4 = document.data?.get("sitio4").toString()
                 findViewById<TextView>(R.id.sitio4).setText(sitio4)
+                findViewById<Button>(R.id.sitio4).setOnClickListener {
+                    val texto = sitio4
+                    val caracterAntiguo = ' '
+                    val caracterNuevo = '+'
+                    val nuevoTexto = reemplazarCaracter(texto, caracterAntiguo, caracterNuevo)
+                    var uriUrl = Uri.parse("https://www.google.com/search?q=" + nuevoTexto)
+                    var intento = Intent(Intent.ACTION_VIEW, uriUrl)
+                    startActivity(intento)
+                }
+
                 var sitio5 = document.data?.get("sitio5").toString()
                 findViewById<TextView>(R.id.sitio5).setText(sitio5)
+                findViewById<Button>(R.id.sitio5).setOnClickListener {
+                    val texto = sitio5
+                    val caracterAntiguo = ' '
+                    val caracterNuevo = '+'
+                    val nuevoTexto = reemplazarCaracter(texto, caracterAntiguo, caracterNuevo)
+                    var uriUrl = Uri.parse("https://www.google.com/search?q=" + nuevoTexto)
+                    var intento = Intent(Intent.ACTION_VIEW, uriUrl)
+                    startActivity(intento)
+                }
+
                 var sitio6 = document.data?.get("sitio6").toString()
                 findViewById<TextView>(R.id.sitio6).setText(sitio6)
+                findViewById<Button>(R.id.sitio6).setOnClickListener {
+                    val texto = sitio6
+                    val caracterAntiguo = ' '
+                    val caracterNuevo = '+'
+                    val nuevoTexto = reemplazarCaracter(texto, caracterAntiguo, caracterNuevo)
+                    var uriUrl = Uri.parse("https://www.google.com/search?q=" + nuevoTexto)
+                    var intento = Intent(Intent.ACTION_VIEW, uriUrl)
+                    startActivity(intento)
+                }
+
                 var sitio7 = document.data?.get("sitio7").toString()
                 findViewById<TextView>(R.id.sitio7).setText(sitio7)
+                findViewById<Button>(R.id.sitio7).setOnClickListener {
+                    val texto = sitio7
+                    val caracterAntiguo = ' '
+                    val caracterNuevo = '+'
+                    val nuevoTexto = reemplazarCaracter(texto, caracterAntiguo, caracterNuevo)
+                    var uriUrl = Uri.parse("https://www.google.com/search?q=" + nuevoTexto)
+                    var intento = Intent(Intent.ACTION_VIEW, uriUrl)
+                    startActivity(intento)
+                }
+
                 var sitio8 = document.data?.get("sitio8").toString()
                 findViewById<TextView>(R.id.sitio8).setText(sitio8)
+                findViewById<Button>(R.id.sitio8).setOnClickListener {
+                    val texto = sitio8
+                    val caracterAntiguo = ' '
+                    val caracterNuevo = '+'
+                    val nuevoTexto = reemplazarCaracter(texto, caracterAntiguo, caracterNuevo)
+                    var uriUrl = Uri.parse("https://www.google.com/search?q=" + nuevoTexto)
+                    var intento = Intent(Intent.ACTION_VIEW, uriUrl)
+                    startActivity(intento)
+                }
 
                 var vuelos = document.data?.get("Vuelos").toString()
                 findViewById<Button>(R.id.vuelos).setOnClickListener {
@@ -134,4 +214,8 @@ import com.google.firebase.firestore.SetOptions
             }
         }
     }
+     fun reemplazarCaracter(string: String, caracterAntiguo: Char, caracterNuevo: Char): String {
+         return string.map { if (it == caracterAntiguo) caracterNuevo else it }
+             .joinToString("")
+     }
 }

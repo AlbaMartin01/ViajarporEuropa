@@ -132,7 +132,7 @@
 
                 <LinearLayout
                     android:layout_width="300dp"
-                    android:layout_height="425dp"
+                    android:layout_height="600dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="25dp"
                     android:background="@drawable/shape"
@@ -163,15 +163,19 @@
                             android:layout_marginLeft="50dp"
                             android:layout_marginRight="10dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/pinubitfg" />
+                            android:src="@drawable/pinubitfg"
+                            android:layout_gravity="center"/>
 
-                        <TextView
+                        <Button
                             android:id="@+id/sitio1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:layout_marginRight="50dp"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textSize="13dp"
+                            android:background="@android:color/transparent"
+                            android:textAlignment="textStart"
+                            android:textAllCaps="false"/>
 
                     </LinearLayout>
 
@@ -187,15 +191,19 @@
                             android:layout_marginLeft="50dp"
                             android:layout_marginRight="10dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/pinubitfg" />
+                            android:src="@drawable/pinubitfg"
+                            android:layout_gravity="center"/>
 
-                        <TextView
+                        <Button
                             android:id="@+id/sitio2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:layout_marginRight="50dp"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textSize="13dp"
+                            android:background="@android:color/transparent"
+                            android:textAlignment="textStart"
+                            android:textAllCaps="false"/>
 
                     </LinearLayout>
 
@@ -211,15 +219,19 @@
                             android:layout_marginLeft="50dp"
                             android:layout_marginRight="10dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/pinubitfg" />
+                            android:src="@drawable/pinubitfg"
+                            android:layout_gravity="center"/>
 
-                        <TextView
+                        <Button
                             android:id="@+id/sitio3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:layout_marginRight="50dp"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textSize="13dp"
+                            android:background="@android:color/transparent"
+                            android:textAlignment="textStart"
+                            android:textAllCaps="false"/>
 
                     </LinearLayout>
 
@@ -235,15 +247,19 @@
                             android:layout_marginLeft="50dp"
                             android:layout_marginRight="10dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/pinubitfg" />
+                            android:src="@drawable/pinubitfg"
+                            android:layout_gravity="center"/>
 
-                        <TextView
+                        <Button
                             android:id="@+id/sitio4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:layout_marginRight="50dp"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textSize="13dp"
+                            android:background="@android:color/transparent"
+                            android:textAlignment="textStart"
+                            android:textAllCaps="false"/>
 
                     </LinearLayout>
 
@@ -259,15 +275,19 @@
                             android:layout_marginLeft="50dp"
                             android:layout_marginRight="10dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/pinubitfg" />
+                            android:src="@drawable/pinubitfg"
+                            android:layout_gravity="center"/>
 
-                        <TextView
+                        <Button
                             android:id="@+id/sitio5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:layout_marginRight="50dp"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textSize="13dp"
+                            android:background="@android:color/transparent"
+                            android:textAlignment="textStart"
+                            android:textAllCaps="false"/>
 
                     </LinearLayout>
 
@@ -283,15 +303,19 @@
                             android:layout_marginLeft="50dp"
                             android:layout_marginRight="10dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/pinubitfg" />
+                            android:src="@drawable/pinubitfg"
+                            android:layout_gravity="center"/>
 
-                        <TextView
+                        <Button
                             android:id="@+id/sitio6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:layout_marginRight="50dp"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textSize="13dp"
+                            android:background="@android:color/transparent"
+                            android:textAlignment="textStart"
+                            android:textAllCaps="false"/>
 
                     </LinearLayout>
 
@@ -307,15 +331,19 @@
                             android:layout_marginLeft="50dp"
                             android:layout_marginRight="10dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/pinubitfg" />
+                            android:src="@drawable/pinubitfg"
+                            android:layout_gravity="center"/>
 
-                        <TextView
+                        <Button
                             android:id="@+id/sitio7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:layout_marginRight="50dp"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textSize="13dp"
+                            android:background="@android:color/transparent"
+                            android:textAlignment="textStart"
+                            android:textAllCaps="false"/>
 
                     </LinearLayout>
 
@@ -331,15 +359,19 @@
                             android:layout_marginLeft="50dp"
                             android:layout_marginRight="10dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/pinubitfg" />
+                            android:src="@drawable/pinubitfg"
+                            android:layout_gravity="center"/>
 
-                        <TextView
+                        <Button
                             android:id="@+id/sitio8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:layout_marginRight="50dp"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textSize="13dp"
+                            android:background="@android:color/transparent"
+                            android:textAlignment="textStart"
+                            android:textAllCaps="false"/>
 
                     </LinearLayout>
                 </LinearLayout>
