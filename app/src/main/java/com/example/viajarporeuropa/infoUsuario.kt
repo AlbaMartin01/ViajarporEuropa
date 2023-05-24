@@ -17,7 +17,6 @@ class infoUsuario : AppCompatActivity() {
         val db : FirebaseFirestore = FirebaseFirestore.getInstance()
 
         var pagina = intent.getStringExtra("paginaRec")
-        var nombreCiu = intent.getStringExtra("nombreCiudad")
         var IDciudad = intent.getStringExtra("idCiu")
 
         var auth = FirebaseAuth.getInstance()
@@ -39,7 +38,6 @@ class infoUsuario : AppCompatActivity() {
                 startActivity(intento)
             } else if(pagina.equals("infoPaises")){
                 var intento = Intent(this, InfoPais::class.java)
-                intento.putExtra("ciudad",nombreCiu)
                 intento.putExtra("id", IDciudad)
                 startActivity(intento)
             }
@@ -50,27 +48,23 @@ class infoUsuario : AppCompatActivity() {
             if (documentSnapshot.exists()) {
                 val data = documentSnapshot.data
                 val campos = data?.keys ?: emptySet()
-                    // numCampos contiene el número de campos en el documento
 
-                    val linearLayout = findViewById<LinearLayout>(R.id.linearLayout)
+                val linearLayout = findViewById<LinearLayout>(R.id.linearLayout)
 
-                    // Lógica para crear y mostrar los botones según el número de campos
-                    for (campo in campos) {
-                        val button = Button(this)
-                        var ciudad = documentSnapshot.get(campo).toString()
-                        button.text = ciudad
-                        button.setOnClickListener {
-                            var intento = Intent(this,InfoPais::class.java)
-                            intento.putExtra("ciudad",ciudad)
-                            intento.putExtra("id", campo)
-                            startActivity(intento)
-                        }
-                        // Configura el botón según tus necesidades
-                        // ...
-
-                        linearLayout.addView(button) // Agrega el botón al LinearLayout existente
+                for (campo in campos) {
+                    val button = Button(this)
+                    var ciudad = documentSnapshot.get(campo).toString()
+                    button.text = ciudad
+                    button.setOnClickListener {
+                        var intento = Intent(this,InfoPais::class.java)
+                        intento.putExtra("ciudad",ciudad)
+                        intento.putExtra("id", campo)
+                        startActivity(intento)
                     }
+
+                    linearLayout.addView(button)
                 }
             }
+        }
     }
 }

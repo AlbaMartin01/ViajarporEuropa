@@ -29,7 +29,6 @@ import com.google.firebase.firestore.SetOptions
 
         var nombUsuario = intent.getStringExtra("nombreUsuario")
         var paginaRecivida = "infoPaises"
-        var nombCiudad = intent.getStringExtra("ciudad")
         var idCiudad = intent.getStringExtra("id").toString()
 
         var ciudad = ""

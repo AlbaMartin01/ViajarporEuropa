@@ -27,40 +27,30 @@
             android:gravity="center"
             android:orientation="vertical"
             android:layout_marginTop="15dp">
-
             <EditText android:id="@+id/email"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:hint="E-mail (usuario)"
                 android:inputType="textEmailAddress"/>
-
             <EditText android:id="@+id/contraseña1"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
                 android:inputType="textPassword"/>
-
             <EditText android:id="@+id/contraseña2"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:hint="Repite la contraseña"
                 android:inputType="textPassword"/>
-
         </LinearLayout>
 
-        <LinearLayout
+        <Button android:id="@+id/aceptarRegistro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
-
-            <Button android:id="@+id/aceptarRegistro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CONTINUAR"
-                android:textColor="@color/black"
-                android:background="@drawable/shape"/>
-
-        </LinearLayout>
+            android:text="CONTINUAR"
+            android:textColor="@color/black"
+            android:background="@drawable/shape"
+            android:layout_marginTop="15dp"/>
 
     </LinearLayout>
 

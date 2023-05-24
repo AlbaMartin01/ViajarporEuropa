@@ -14,7 +14,6 @@ import com.google.firebase.ktx.Firebase
 class Login : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var authStateListener: FirebaseAuth.AuthStateListener
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

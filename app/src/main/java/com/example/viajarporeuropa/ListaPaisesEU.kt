@@ -84,7 +84,6 @@ class ListaPaisesEU : AppCompatActivity() {
             } else if (findViewById<RadioButton>(R.id.zagreb).isChecked) {
                 intento.putExtra("id", "Zagreb")
             }
-
             startActivity(intento)
         }
 
