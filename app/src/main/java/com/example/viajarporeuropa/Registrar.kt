@@ -23,6 +23,8 @@ class Registrar : AppCompatActivity() {
         val password1 = findViewById<EditText>(R.id.contraseña1)
         val password2 = findViewById<EditText>(R.id.contraseña2)
 
+        supportActionBar?.hide()
+
         findViewById<Button>(R.id.aceptarRegistro).setOnClickListener {
             var pass1 = password1.text.toString()
             var pass2 = password2.text.toString()

@@ -4,11 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.RadioButton
-import android.widget.Spinner
 
 class ListaPaisesEU : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -17,6 +15,8 @@ class ListaPaisesEU : AppCompatActivity() {
         setContentView(R.layout.activity_lista_paises_eu)
 
         var paginaRecivida = "listaPaises"
+
+        supportActionBar?.hide()
 
         findViewById<ImageButton>(R.id.atrasListaPaises).setOnClickListener {
             var intento = Intent(this, Login::class.java)

@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -22,6 +23,8 @@ class Login : AppCompatActivity() {
         val txtemail: TextView = findViewById(R.id.usuarioLogin)
         val txtpassword: TextView = findViewById(R.id.contrLogin)
 
+        supportActionBar?.hide()
+
         firebaseAuth = Firebase.auth
         btningresar.setOnClickListener{
             singIn(txtemail.text.toString(),txtpassword.text.toString())
@@ -29,7 +32,13 @@ class Login : AppCompatActivity() {
 
         findViewById<Button>(R.id.olvidarContraseña).setOnClickListener {
             val auth = FirebaseAuth.getInstance()
-            auth.sendPasswordResetEmail(auth.currentUser?.email.toString())
+            auth.sendPasswordResetEmail(txtemail.text.toString()).addOnCompleteListener { task->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Se ha enviado el correo", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "No se ha enviado el correo", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 

@@ -1,19 +1,16 @@
  package com.example.viajarporeuropa
 
 import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
@@ -30,6 +27,8 @@ import com.google.firebase.firestore.SetOptions
         var nombUsuario = intent.getStringExtra("nombreUsuario")
         var paginaRecivida = "infoPaises"
         var idCiudad = intent.getStringExtra("id").toString()
+
+        supportActionBar?.hide()
 
         var ciudad = ""
 

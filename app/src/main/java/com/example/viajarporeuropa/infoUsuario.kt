@@ -20,7 +20,9 @@ class infoUsuario : AppCompatActivity() {
         var IDciudad = intent.getStringExtra("idCiu")
 
         var auth = FirebaseAuth.getInstance()
+        var user = FirebaseAuth.getInstance().currentUser
 
+        supportActionBar?.hide()
 
         findViewById<TextView>(R.id.nombreUsuario).setText(auth.currentUser?.email.toString())
 
@@ -30,6 +32,21 @@ class infoUsuario : AppCompatActivity() {
             auth.signOut()
             var intento = Intent(this, Login::class.java)
             startActivity(intento)
+        }
+
+        val documentRef = db.collection("UsuariosLugaresFavoritos").document(auth.currentUser?.email.toString())
+
+        findViewById<Button>(R.id.usuarioBorrarCuenta).setOnClickListener {
+            user?.delete()?.addOnCompleteListener {task ->
+                if (task.isSuccessful){
+                    Toast.makeText(this, "El usuario se ha eliminado correctamente", Toast.LENGTH_LONG).show()
+                    documentRef.delete()
+                    var intento = Intent(this, Login::class.java)
+                    startActivity(intento)
+                } else{
+                    Toast.makeText(this,"No se ha podido eliminar correctamente el usuario",Toast.LENGTH_LONG).show()
+                }
+            }
         }
 
         findViewById<ImageButton>(R.id.atrasPaginaUsuario).setOnClickListener {
@@ -43,7 +60,6 @@ class infoUsuario : AppCompatActivity() {
             }
         }
 
-        val documentRef = db.collection("UsuariosLugaresFavoritos").document(auth.currentUser?.email.toString())
         documentRef.get().addOnSuccessListener { documentSnapshot ->
             if (documentSnapshot.exists()) {
                 val data = documentSnapshot.data
